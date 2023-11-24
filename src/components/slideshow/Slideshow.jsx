@@ -1,3 +1,4 @@
+import React from 'react'
 import Carousel from 'react-material-ui-carousel';
 import { Paper } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -11,8 +12,8 @@ function Slideshow({ movies }) {
         navigate(`/Reviews/${movieId}`);
     }
     return (
-        <div className='movie-carousel-container'>
-            <Carousel>
+        <div className=''>
+            <Carousel className=''>
                 {
                     movies?.map((movie) => {
                         return (
@@ -21,9 +22,9 @@ function Slideshow({ movies }) {
                                     <div className="movie-card" style={{ "--img": `url(${movie.backdrops[0]})` }}>
                                         <div className="movie-detail">
                                             <div className="movie-poster">
-                                                <img src={movie.poster} alt="" />
+                                                <img src={movie.poster} alt={movie.title} />
                                             </div>
-                                            <div className="movie-title">
+                                            <div className="text-6xl">
                                                 <h4>{movie.title}</h4>
                                             </div>
                                             <div className="movie-buttons-container">

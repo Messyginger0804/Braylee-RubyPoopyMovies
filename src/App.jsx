@@ -1,3 +1,4 @@
+import React from 'react'
 import api from './api/axiosConfig'
 import { useState, useEffect } from 'react'
 import Layout from './components/Layout'
@@ -26,13 +27,13 @@ function App() {
   }, [])
 
   return (
-    <>
+    <main className='flex flex-col min-h-[100vh]'>
       <Routes>
         <Route path='/' element={<Layout />}>
           <Route path='/' element={<Home movies={movies} />} ></Route>
         </Route>
       </Routes>
-    </>
+    </main>
   )
 }
 
