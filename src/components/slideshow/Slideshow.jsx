@@ -12,21 +12,29 @@ function Slideshow({ movies }) {
         navigate(`/Reviews/${movieId}`);
     }
     return (
-        <div className='movie-carousel-container w-screen h-screen bg-black'>
+        <div className='movie-carousel-container w-screen h-screen to-black/90 bg-black'>
             <Carousel>
                 {
                     movies?.map((movie) => {
                         return (
                             <Paper key={movie.imdbId}>
-                                <div className='movie-card-container h-[600px] bg-black'>
+                                <div className='movie-card-container h-[600px] bg-black bg-gradient-to-b from-transparent from-0% to-black/50'>
                                     <div className="movie-card bg-no-repeat w-full h-full bg-cover bgImg" style={{ "--img": `url(${movie.backdrops[0]})` }}>
-                                        <div className="movie-detail absolute top-[200px] flex justify-between w-full">
-                                            <div className="movie-poster p-1 h-[300px] border-[1px] border-solid border-yellow-600">
-                                                <img className='h-full w-full' src={movie.poster} alt="" />
+                                        <div className="movie-detail absolute top-[200px] w-full flex flex-col items-center md:flex-row md:justify-between">
+                                            <div className="movie-poster rounded m-2 h-[300px] border-[1px] border-solid border-yellow-600">
+                                                <img className='h-full w-full object-contain rounded' src={movie.poster} alt="" />
                                             </div>
-                                            <div className="movie-title text-white flex items center text-lg md:text-4xl font-serif ">
+                                            <div className="movie-title text-white flex items-center text-lg md:text-4xl font-serif ">
                                                 <h4>{movie.title}</h4>
                                             </div>
+
+                                            {/* @media only screen and (max-width: 800px) {
+                                                .movie-detail{
+                                                flex-direction: column;
+                                                align-items: center;
+                                                top:20px;
+                                                }
+                                                } */}
 
 
                                             <div className="movie-buttons-container items-center w-[300px] space-y-[10%]">
