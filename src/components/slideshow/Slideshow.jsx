@@ -21,26 +21,17 @@ function Slideshow({ movies }) {
                                 <div className='movie-card-container h-[600px] bg-black bg-gradient-to-b from-transparent from-0% to-black/50'>
                                     <div className="movie-card bg-no-repeat w-full h-full bg-cover bgImg" style={{ "--img": `url(${movie.backdrops[0]})` }}>
                                         <div className="movie-detail absolute top-[200px] w-full flex flex-col items-center md:flex-row md:justify-between">
-                                            <div className="movie-poster rounded m-2 h-[300px] border-[1px] border-solid border-yellow-600">
+                                            <div className="movie-poster rounded md:m-2 h-[300px] border-[1px] border-solid border-yellow-600">
                                                 <img className='h-full w-full object-contain rounded' src={movie.poster} alt="" />
                                             </div>
-                                            <div className="movie-title text-white flex items-center text-lg md:text-4xl font-serif ">
+                                            <div className="invisible md:visible movie-title text-white flex items-center text-lg md:text-4xl font-serif ">
                                                 <h4>{movie.title}</h4>
                                             </div>
 
-                                            {/* @media only screen and (max-width: 800px) {
-                                                .movie-detail{
-                                                flex-direction: column;
-                                                align-items: center;
-                                                top:20px;
-                                                }
-                                                } */}
-
-
-                                            <div className="movie-buttons-container items-center w-[300px] space-y-[10%]">
-                                                <Link to={`/Trailer/${movie.trailerLink.substring(movie.trailerLink.length - 11)}`}>
+                                            <div className="movie-buttons-container items-center w-[300px] space-y-[10%] flex justify-center md:flex-none">
+                                                <Link to={`/Trailer/${movie.trailerLink.substring(movie.trailerLink.length - 11)}`}>                                                    {/* <Link to={`/Trailer/${movie.trailerLink}` && console.log(movie.trailerLink)}> */}
                                                     <div className="play-button-icon-container p-0 m-0 w-[150px]">
-                                                        <FontAwesomeIcon className="play-button-icon p-0 m-0 text-yellow-600 text-[3rem] cursor-pointer hover:text-[4rem] hover:text-white"
+                                                        <FontAwesomeIcon className="play-button-icon p-0 m-0 text-yellow-600 md:text-[3rem] text-[2rem] cursor-pointer md:hover:text-[4rem] hover:text-[3rem] hover:text-white"
                                                             icon={faCirclePlay}
                                                         />
                                                     </div>
@@ -50,6 +41,7 @@ function Slideshow({ movies }) {
                                                     <button className='underline' onClick={() => reviews(movie.imdbId)} >Reviews</button>
                                                 </div>
                                             </div>
+
                                         </div>
                                     </div>
                                 </div>
