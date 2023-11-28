@@ -3,9 +3,17 @@ import { faVideoSlash } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { BiCameraMovie } from "react-icons/bi";
 import { Link } from '@mui/material';
+import { useKindeAuth } from "@kinde-oss/kinde-auth-react";
+
+
+{/* <button onClick={register} type="button">Register</button>
+<button onClick={login} type="button">Log In</button> */}
 
 
 function Header() {
+    const { login, register } = useKindeAuth();
+
+
     return (
         <nav className='bg-black/90 text-yellow-600 p-2'>
             <div className='flex justify-items-center justify-between'>
@@ -16,8 +24,8 @@ function Header() {
                     </div>
                 </Link>
                 <div className='flex justify-end mr-2 mb-1 gap-4 text-sm'>
-                    <a className='rounded-xl border-2 border-yellow-600 p-1 cursor-pointer active:bg-yellow-600 active:text-black'>Login</a>
-                    <a className='rounded xl border-2 border-yellow-600 p-1 cursor-pointer active:bg-yellow-600 active:text-black'>Register</a>
+                    <button onClick={register} type="button" className='rounded-xl border-2 border-yellow-600 p-1 cursor-pointer active:bg-yellow-600 active:text-black'>Login</button>
+                    <button onClick={login} type="button" className='rounded xl border-2 border-yellow-600 p-1 cursor-pointer active:bg-yellow-600 active:text-black'>Register</button>
                 </div>
             </div>
         </nav>
