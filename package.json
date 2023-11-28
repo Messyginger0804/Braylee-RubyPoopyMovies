@@ -15,9 +15,11 @@
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@mui/material": "^5.14.18",
+    "appwrite": "^13.0.1",
     "axios": "^1.6.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.12.0",
     "react-material-ui-carousel": "^3.4.2",
     "react-player": "^2.13.0",
     "react-router-dom": "^6.19.0"

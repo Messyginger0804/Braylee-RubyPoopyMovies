@@ -52,22 +52,29 @@ const Reviews = ({ getMovieData, movie, reviews, setReviews }) => {
                 </div>
             </div>
             <div>
-                <div className='grid grid-cols-2 items-center m-6'>
+
+                <div className='grid grid-cols-2 items-center ml-32 m-6'>
                     <div className='flex flex-col'>
-                        <img className='h-20 w-20' src={Braylee} />
+                        <div className='flex m-4'>
 
-                        <p className='text-white m-6'>
-                            braylees review
-                        </p>
-                        <img className='h-20 w-20' src={Ruby} />
+                            <img className='h-20 w-20' src={Braylee} />
 
-                        <p className='text-white m-6'>
-                            rubys review
-                        </p>
+                            <p className='text-white m-6'>
+                                braylees review
+                            </p>
+                        </div>
+                        <div className='flex m-4'>
+
+                            <img className='h-20 w-20' src={Ruby} />
+
+                            <p className='text-white m-6'>
+                                rubys review
+                            </p>
+                        </div>
                     </div>
 
 
-                    <div className='border-solid border-2 w-96 border-yellow-700'>
+                    <div className='border-solid border-2 max-w-[30rem] max-h-96 overflow-y-scroll border-yellow-700'>
                         {
                             reviews?.map((review) => {
                                 console.log(review)
