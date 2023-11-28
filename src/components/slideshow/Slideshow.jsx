@@ -22,7 +22,7 @@ function Slideshow({ movies }) {
                                     <div className="movie-card bg-no-repeat w-full h-full bg-cover bgImg" style={{ "--img": `url(${movie.backdrops[0]})` }}>
                                         <div className="movie-detail absolute top-[200px] w-full flex flex-col items-center md:flex-row md:justify-between">
                                             <div className="movie-poster rounded md:m-2 h-[300px] border-[1px] border-solid border-yellow-600">
-                                                <img className='h-full w-full object-contain rounded' src={movie.poster} alt="" />
+                                                <img className='h-full w-full object-contain rounded' src={movie?.poster} alt={movie?.title} />
                                             </div>
                                             <div className="invisible md:visible movie-title text-white flex items-center text-lg md:text-4xl font-serif ">
                                                 <h4>{movie.title}</h4>
