@@ -3,7 +3,9 @@ import { faVideoSlash } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { BiCameraMovie } from "react-icons/bi";
 import { Link } from '@mui/material';
-import { useKindeAuth } from "@kinde-oss/kinde-auth-react";
+// import { useKindeAuth } from "@kinde-oss/kinde-auth-react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { CgProfile } from "react-icons/cg";
 
 
 {/* <button onClick={register} type="button">Register</button>
@@ -11,7 +13,7 @@ import { useKindeAuth } from "@kinde-oss/kinde-auth-react";
 
 
 function Header() {
-    const { login, register } = useKindeAuth();
+    // const { login, register } = useKindeAuth();
 
 
     return (
@@ -23,9 +25,16 @@ function Header() {
                         Braylee & Ruby💩 Movies
                     </div>
                 </Link>
-                <div className='flex justify-end mr-2 mb-1 gap-4 text-sm'>
+                {/* <div className='flex justify-end mr-2 mb-1 gap-4 text-sm'>
                     <button onClick={register} type="button" className='rounded-xl border-2 border-yellow-600 p-1 cursor-pointer active:bg-yellow-600 active:text-black'>Login</button>
                     <button onClick={login} type="button" className='rounded xl border-2 border-yellow-600 p-1 cursor-pointer active:bg-yellow-600 active:text-black'>Register</button>
+                </div> */}
+
+                <div className='flex gap-4 text-3xl'>
+                    <a target="_blank" rel='https://github.com/Messyginger0804'> <FaGithub className='cursor-pointer hover:text-slate-100' /></a>
+                    <a target="_blank" rel='https://github.com/Messyginger0804'> <FaLinkedin className='cursor-pointer hover:text-slate-100' /></a>
+                    <a target="_blank" rel='https://github.com/Messyginger0804'> <CgProfile className='cursor-pointer hover:text-slate-100' /></a>
+
                 </div>
             </div>
         </nav>

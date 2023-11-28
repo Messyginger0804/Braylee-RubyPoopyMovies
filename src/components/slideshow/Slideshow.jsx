@@ -37,7 +37,7 @@ function Slideshow({ movies }) {
                                                     </div>
                                                 </Link>
 
-                                                <div className="movie-review-button-container text-yellow-300">
+                                                <div className="movie-review-button-container text-yellow-300 hover:text-slate-100">
                                                     <button className='underline' onClick={() => reviews(movie.imdbId)} >Reviews</button>
                                                 </div>
                                             </div>
