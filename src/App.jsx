@@ -8,6 +8,7 @@ import NotFound from './components/noFound/NotFound'
 import Trailer from './components/trailer/Trailer'
 import Header from './components/header/Header'
 import Reviews from './components/review/Reviews'
+import Footer from './components/footer/Footer'
 // import { KindeProvider } from "@kinde-oss/kinde-auth-react";
 // import LoginRegister from './components/login-register/LoginRegister'
 
@@ -77,6 +78,7 @@ function App() {
           <Route path="*" element={<NotFound />}></Route>
         </Route>
       </Routes>
+      <Footer />
       {/* </KindeProvider> */}
     </main>
   )

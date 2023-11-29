@@ -16,10 +16,19 @@ function Slideshow({ movies }) {
             <Carousel>
                 {
                     movies?.map((movie) => {
+
+                        // {
+                        //     const movieBackdrop = movie.backdrops;
+
+                        //     const randomBackdrop = Math.floor(Math.random() * movieBackdrop.length);
+                        // }
                         return (
                             <Paper key={movie.imdbId}>
                                 <div className='movie-card-container h-[600px] bg-black bg-gradient-to-b from-transparent from-0% to-black/50'>
-                                    <div className="movie-card bg-no-repeat w-full h-full bg-cover bgImg" style={{ "--img": `url(${movie.backdrops[0]})` }}>
+                                    <div className="movie-card bg-no-repeat w-full h-full bg-cover bgImg" style={{
+                                        "--img": `url(
+                                        ${movie?.backdrops[0]}
+                                        )` }}>
                                         <div className="movie-detail absolute top-[200px] w-full flex flex-col items-center md:flex-row md:justify-between">
                                             <div className="movie-poster rounded md:m-2 h-[300px] border-[1px] border-solid border-yellow-600">
                                                 <img className='h-full w-full object-contain rounded' src={movie?.poster} alt={movie?.title} />

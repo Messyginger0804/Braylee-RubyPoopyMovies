@@ -17,10 +17,10 @@ function Header() {
 
 
     return (
-        <nav className='bg-black/90 text-yellow-600 p-2'>
+        <nav className='bg-black text-yellow-600 p-2 border-b-2'>
             <div className='flex justify-items-center justify-between'>
                 <Link style={{ textDecoration: 'none' }} textDec className='text-yellow-600 decoration-0' href='/'>
-                    <div className='text-yellow-600 font-sans flex flex-wrap md:gap-2 decoration-0 justify-start items-center md:text-2xl underline-offset-0'>
+                    <div className='text-yellow-600 border-2 border-yellow-600 hover:border-yellow-50 p-2 font-sans flex flex-wrap md:gap-2 decoration-0 justify-start items-center md:text-2xl underline-offset-0'>
                         <FontAwesomeIcon icon={faVideoSlash} />
                         Braylee & Ruby💩 Movies
                     </div>
@@ -30,11 +30,10 @@ function Header() {
                     <button onClick={login} type="button" className='rounded xl border-2 border-yellow-600 p-1 cursor-pointer active:bg-yellow-600 active:text-black'>Register</button>
                 </div> */}
 
-                <div className='flex gap-4 text-3xl'>
+                <div className='flex gap-4 text-4xl p-2'>
                     <a target="_blank" rel='https://github.com/Messyginger0804'> <FaGithub className='cursor-pointer hover:text-slate-100' /></a>
                     <a target="_blank" rel='https://github.com/Messyginger0804'> <FaLinkedin className='cursor-pointer hover:text-slate-100' /></a>
                     <a target="_blank" rel='https://github.com/Messyginger0804'> <CgProfile className='cursor-pointer hover:text-slate-100' /></a>
-
                 </div>
             </div>
         </nav>
