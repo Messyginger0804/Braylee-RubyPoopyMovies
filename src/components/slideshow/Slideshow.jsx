@@ -7,6 +7,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 function Slideshow({ movies }) {
     const navigate = useNavigate();
+    console.log(movies)
 
     function reviews(movieId) {
         navigate(`/Reviews/${movieId}`);

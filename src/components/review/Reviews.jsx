@@ -41,10 +41,10 @@ const Reviews = ({ getMovieData, movie, reviews, setReviews }) => {
         }
     }
     return (
-        <section className='my-16 grid col-span-2'>
+        <section className='my-16 grid col-span-2 text-white'>
             <div className='m-6 flex flex-wrap md:grid md:grid-cols-2 md:justify-items-center mt-10'>
 
-                <div className="movie-poster rounded w-fit md:h-[500px] border-[1px] border-solid border-yellow-600">
+                <div className="movie-poster rounded w-52 md:w-fit md:h-[500px] border-[1px] border-solid border-yellow-600">
                     <img className='h-full w-full object-contain rounded' src={movie?.poster} alt={movie?.title} />
                 </div>
 
@@ -53,17 +53,22 @@ const Reviews = ({ getMovieData, movie, reviews, setReviews }) => {
 
                         <img className='h-20 w-20' src={Braylee} />
 
-                        <p className='text-white m-6'>
-                            {movie?.brayleeReview}
-                        </p>
+                        <div className='m-6'>
+                            <h2 className='text-white text-center border-b-2 w-[75%] mb-4 text-3xl'>Braylee's Review</h2>
+                            <p className='text-white text-xs md:text-base'>
+                                {movie?.brayleeReview}
+                            </p>
+                        </div>
                     </div>
                     <div className='flex m-4'>
 
                         <img className='h-20 w-20' src={Ruby} />
-
-                        <p className='text-white m-6'>
-                            {movie?.rubyReview}
-                        </p>
+                        <div className='m-6'>
+                            <h2 className='text-white text-center border-b-2 w-[75%] mb-4 text-3xl'>Ruby's Review</h2>
+                            <p className='text-white text-xs md:text-base'>
+                                {movie?.rubyReview}
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -77,12 +82,12 @@ const Reviews = ({ getMovieData, movie, reviews, setReviews }) => {
                 </div>
 
 
-                <div className='overflow-scroll max-h-80'>
+                <div className='overflow-auto max-h-80 mt-4'>
                     {
                         reviews?.map((review) => {
                             console.log(review)
                             return (
-                                <div key={review.id} className='text-white border-solid m-2 p-2 border-yellow-700 border-2 right h-fit flex flex-col justify-end w-[300px]'>
+                                <div key={review.id} className='text-white border-solid m-2 p-2 border-yellow-700 border-2 right h-fit flex flex-col justify-end w-[300px] rounded'>
                                     {review.body}
                                 </div>
                             )

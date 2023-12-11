@@ -1,7 +1,15 @@
+// import 'dotenv/config'
 import axios from 'axios';
 
+// require('dotenv').config()
+
+
+// const API = process.env.PORT
+const API = 'http://localhost:8080'
+
+
 export default axios.create({
-    baseURL: 'http://localhost:8080',
+    baseURL: API,
     headers: { "ngrok-skip-browser-warning": "true" }
 });
 
