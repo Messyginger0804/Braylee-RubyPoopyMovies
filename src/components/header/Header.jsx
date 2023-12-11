@@ -17,7 +17,7 @@ function Header() {
 
 
     return (
-        <nav className='bg-black text-yellow-600 p-2 border-b-2'>
+        <nav className='bg-black text-yellow-600 p-2 border-b-2 m-2'>
             <div className='flex justify-items-center justify-between'>
                 <Link style={{ textDecoration: 'none' }} textDec className='text-yellow-600 decoration-0' href='/'>
                     <div className='text-yellow-600 border-2 border-yellow-600 hover:border-yellow-50 p-1 md:p-2 font-sans flex flex-wrap md:gap-2 decoration-0 justify-start items-center md:text-2xl underline-offset-0 rounded'>
