@@ -1,11 +1,17 @@
-// import 'dotenv/config'
+import 'dotenv/config'
 import axios from 'axios';
 
-// require('dotenv').config()
+// require('dotenv').config();
 
+// import * as dotenv from 'dotenv'
+
+
+// dotenv.config()
+
+// console.log(process.env)
 
 // const API = process.env.PORT
-const API = 'http://localhost:8080'
+const API = 'https://movies-api-mbgf.onrender.com'
 
 
 export default axios.create({
