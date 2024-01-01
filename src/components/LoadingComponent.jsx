@@ -1,5 +1,5 @@
 import React from 'react'
-import { ClipLoader, ClockLoader } from 'react-spinners'
+import { ClipLoader } from 'react-spinners'
 
 export const LoadingComponent = ({ loading, setLoading }) => {
 

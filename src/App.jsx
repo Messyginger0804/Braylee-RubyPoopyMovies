@@ -47,6 +47,9 @@ function App() {
 
       setReviews(singleMovie.reviews);
 
+      setLoading(false)
+
+
 
     }
     catch (error) {
@@ -55,30 +58,16 @@ function App() {
 
   }
 
-  // useEffect(() => {
-  //   async function fetchData() {
-  //     // You can await here
-  //     const response = await MyAPI.getData(someId);
-  //     // ...
-  //   }
-  //   fetchData();
-  // }, [someId]); // Or [] if effect doesn't need props or state
-  // useEffect(() => {
-  //   async function stopLoading() {
-  //     console.log('stop loading');
-  //     setLoading(false)
-  //   }
-  //   stopLoading()
-  //   getMovies();
-  // }, [movies]); // Or [] if effect doesn't need props or state
-
   useEffect(() => {
     getMovies();
   }, [])
 
   return (
-    <main className='flex flex-col min-h-[100vh]'>
-      {/* <KindeProvider
+    <body>
+
+      <Header />
+      <main className='flex flex-col min-h-[100vh]'>
+        {/* <KindeProvider
         clientId="aa5bf8bd52534f0d995ef17ea9286047"
         domain="https://dfwsoftware.kinde.com"
         // redirectUri="http://localhost:5173"
@@ -87,25 +76,24 @@ function App() {
         redirectUri={window.location.origin}
       > */}
 
-      <Header />
 
 
 
 
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route path="/" element={<Home loading={loading} setLoading={setLoading} movies={movies} />} ></Route>
-          {/* <Route path="/Login-Register" element={<LoginRegister />} ></Route> */}
-          <Route path="/Trailer/:ytTrailerId" element={<Trailer />}></Route>
-          <Route path="/Reviews/:movieId" element={<Reviews
-            getMovieData={getMovieData} movie={movie} reviews={reviews} setReviews={setReviews}
-          />}></Route>
-          <Route path="*" element={<NotFound />}></Route>
-        </Route>
-      </Routes>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route path="/" element={<Home loading={loading} setLoading={setLoading} movies={movies} />} ></Route>
+            {/* <Route path="/Login-Register" element={<LoginRegister />} ></Route> */}
+            <Route path="/Trailer/:ytTrailerId" element={<Trailer />}></Route>
+            <Route path="/Reviews/:movieId" element={<Reviews
+              getMovieData={getMovieData} movie={movie} reviews={reviews} setReviews={setReviews}
+            />}></Route>
+            <Route path="*" element={<NotFound />}></Route>
+          </Route>
+        </Routes>
+      </main>
       <Footer />
-      {/* </KindeProvider> */}
-    </main>
+    </body>
   )
 }
 
