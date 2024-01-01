@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import api from './api/axiosConfig'
 import { useState, useEffect } from 'react'
 import Layout from './components/Layout'
@@ -9,14 +9,17 @@ import Trailer from './components/trailer/Trailer'
 import Header from './components/header/Header'
 import Reviews from './components/review/Reviews'
 import Footer from './components/footer/Footer'
-// import { KindeProvider } from "@kinde-oss/kinde-auth-react";
-// import LoginRegister from './components/login-register/LoginRegister'
+
+
+
 
 
 function App() {
   const [movies, setMovies] = useState();
   const [movie, setMovie] = useState();
   const [reviews, setReviews] = useState([]);
+  const [loading, setLoading] = useState(true)
+
 
   const getMovies = async () => {
 
@@ -25,6 +28,7 @@ function App() {
       const response = await api.get("/api/v1/movies");
 
       setMovies(response.data);
+      setLoading(false)
 
     }
     catch (err) {
@@ -51,6 +55,23 @@ function App() {
 
   }
 
+  // useEffect(() => {
+  //   async function fetchData() {
+  //     // You can await here
+  //     const response = await MyAPI.getData(someId);
+  //     // ...
+  //   }
+  //   fetchData();
+  // }, [someId]); // Or [] if effect doesn't need props or state
+  // useEffect(() => {
+  //   async function stopLoading() {
+  //     console.log('stop loading');
+  //     setLoading(false)
+  //   }
+  //   stopLoading()
+  //   getMovies();
+  // }, [movies]); // Or [] if effect doesn't need props or state
+
   useEffect(() => {
     getMovies();
   }, [])
@@ -67,9 +88,13 @@ function App() {
       > */}
 
       <Header />
+
+
+
+
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route path="/" element={<Home movies={movies} />} ></Route>
+          <Route path="/" element={<Home loading={loading} setLoading={setLoading} movies={movies} />} ></Route>
           {/* <Route path="/Login-Register" element={<LoginRegister />} ></Route> */}
           <Route path="/Trailer/:ytTrailerId" element={<Trailer />}></Route>
           <Route path="/Reviews/:movieId" element={<Reviews

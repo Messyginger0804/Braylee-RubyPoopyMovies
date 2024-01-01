@@ -1,11 +1,18 @@
-import React from 'react'
+import React from 'react';
 import Slideshow from "../slideshow/Slideshow"
+import { LoadingComponent } from '../LoadingComponent'
 
 
-function Home({ movies }) {
+function Home({ movies, loading, setLoading }) {
     return (
         <div>
-            <Slideshow movies={movies} />
+            <div>
+
+                <LoadingComponent loading={loading} setLoading={setLoading} />
+            </div>
+            <div>
+                <Slideshow movies={movies} />
+            </div>
         </div>
     )
 }
