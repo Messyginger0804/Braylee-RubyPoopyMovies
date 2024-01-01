@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ReviewForm from './ReviewForm'
 // import { faMoneyBillWave } from '@fortawesome/free-solid-svg-icons'
 import { useEffect, useRef } from 'react';
@@ -11,22 +11,29 @@ import { LoadingComponent } from '../LoadingComponent';
 
 
 const Reviews = ({ getMovieData, movie, reviews, setReviews,
-    loading, setLoading
+    // loading, setLoading
 }) => {
+
+    const [loading, setLoading] = useState(true)
 
     // let loading = true
     // let setLoading = 'loading'
 
 
-    console.log(movie)
+    // console.log(movie)
+
 
     const revText = useRef();
     let params = useParams();
     const movieId = params.movieId;
 
     useEffect(() => {
-        getMovieData(movieId);
-    }, [])
+        getMovieData(movieId)
+        setTimeout(function async() {
+            setLoading(false)
+            console.log('Boolean is now false after 3 seconds.');
+        }, 1000);
+    }, [movieId])
     const addReview = async (e) => {
         e.preventDefault();
 
@@ -42,7 +49,7 @@ const Reviews = ({ getMovieData, movie, reviews, setReviews,
             setReviews(updatedReviews);
             // setLoading(false)
 
-            console.log(response);
+            // console.log(response);
         }
         catch (err) {
             console.error(err);
@@ -100,7 +107,7 @@ const Reviews = ({ getMovieData, movie, reviews, setReviews,
                     <div className='overflow-auto max-h-80 mt-4'>
                         {
                             reviews?.map((review) => {
-                                console.log(review)
+                                // console.log(review)
                                 return (
                                     <div key={review.id} className='text-white border-solid m-2 p-2 border-yellow-700 border-2 right h-fit flex flex-col justify-end w-[300px] rounded'>
                                         {review.body}

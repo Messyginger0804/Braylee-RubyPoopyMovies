@@ -63,7 +63,7 @@ function App() {
   }, [])
 
   return (
-    <body>
+    <div>
 
       <Header />
       <main className='flex flex-col min-h-[100vh]'>
@@ -93,7 +93,7 @@ function App() {
         </Routes>
       </main>
       <Footer />
-    </body>
+    </div>
   )
 }
 
